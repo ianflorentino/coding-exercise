@@ -34,7 +34,7 @@ Run `rails server` and open your web browser to `http://localhost:3000`
 ## Endpoints
 All endpoints require an authentication token in the headers
 
-##### Users
+### Users
 GET `/users` - returns all users in an array
 
 GET `/users/:id` - returns a single user object 
@@ -61,7 +61,7 @@ PATCH/PUT `/users/:id` - updates a single user and returns the updated user obje
 
 DELETE `/users/:id` - deletes a single user 
 
-##### Tasks
+### Tasks
 GET `/tasks` - returns all tasks in an array
 
 POST `/tasks` - creates a task
@@ -151,7 +151,7 @@ PATCH/PUT `/tasks/:id` - updates a single task and returns the updated task obje
 
 DELETE `/tasks/:id` - deletes a single task
 
-##### Facebook Sign In 
+### Facebook Sign In 
 This project assumes that the client side will be using Facebook's JavaScript SDK and thus sending the response object containing the `accessToken` and `signedRequest`
 
 GET|POST `/auth/:provider/callback` - accepts the oauth object and creates the user object from the basic facebook data
@@ -178,7 +178,7 @@ expect response of:
 }
 ```
 
-##### Logout
+### Logout
 GET|DELETE `/logout` - changes users authentication token 'logs out' user
 
 ## Tests 
