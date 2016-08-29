@@ -1,8 +1,8 @@
 <html>
     <head></head>
     <body>
-        <a id="sign_in">Sign in</a>
-        <a id="sign_out">Sign out</a>
+        <a href="#" id="sign_in">Sign in</a>
+        <a href="#" id="sign_out">Sign out</a>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
             jQuery(function() {
@@ -30,6 +30,7 @@
                 });
               });
               return $('#sign_out').click(function(e) {
+                e.preventDefault();
                 FB.getLoginStatus(function(response) {
                   if (response.authResponse) {
                     return FB.logout();

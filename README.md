@@ -152,7 +152,7 @@ PATCH/PUT `/tasks/:id` - updates a single task and returns the updated task obje
 DELETE `/tasks/:id` - deletes a single task
 
 ### Facebook Sign In 
-This project assumes that the client side will be using Facebook's JavaScript SDK and thus sending the response object containing the `accessToken` and `signedRequest`
+This project assumes that the client side will be using Facebook's JavaScript SDK and thus sending the response object containing the `accessToken` and `signedRequest`. To test this flow, navigate to `http://localhost:3000` and click `Sign In` and authenticate through Facebook's OAuth flow.
 
 GET|POST `/auth/:provider/callback` - accepts the oauth object and creates the user object from the basic facebook data
 
