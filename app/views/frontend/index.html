@@ -1,0 +1,43 @@
+<html>
+    <head></head>
+    <body>
+        <a id="sign_in">Sign in</a>
+        <a id="sign_out">Sign out</a>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script>
+            jQuery(function() {
+              $('body').prepend('<div id="fb-root"></div>');
+              return $.ajax({
+                url: window.location.protocol + "//connect.facebook.net/en_US/all.js",
+                dataType: 'script',
+                cache: true
+              });
+            });
+
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId: '179645219125631',
+                cookie: true
+              });
+              $('#sign_in').click(function(e) {
+                e.preventDefault();
+                return FB.login(function(response) {
+                 console.log(response);
+                  if (response.authResponse) {
+                    console.log(response.authResponse);
+                    return window.location = '/auth/facebook/callback';
+                  }
+                });
+              });
+              return $('#sign_out').click(function(e) {
+                FB.getLoginStatus(function(response) {
+                  if (response.authResponse) {
+                    return FB.logout();
+                  }
+                });
+                return true;
+              });
+            };
+        </script>
+    </body>
+</html>
